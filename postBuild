@@ -10,4 +10,4 @@ git clone https://github.com/dmalyuta/scp_traj_opt
 cd scp_traj_opt
 git checkout dev/binder
 cd ../tutorial/
-julia -e 'using Pkg; Pkg.activate("."); Pkg.precompile()'
+julia -e 'using Pkg; Pkg.activate("."); Pkg.develop(path="../scp_traj_opt/"); Pkg.precompile()'
