@@ -1,0 +1,13 @@
+#!/bin/bash
+set -ex
+
+pip install matplotlib==3.5.1
+cd /home/jovyan
+mkdir tutorial
+mv src tutorial
+mv *.toml tutorial
+git clone https://github.com/dmalyuta/scp_traj_opt
+cd scp_traj_opt
+git checkout dev/binder
+cd ../tutorial/
+julia -e 'using Pkg; Pkg.activate("."); Pkg.precompile()'
