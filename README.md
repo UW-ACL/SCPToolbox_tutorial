@@ -17,7 +17,7 @@
   $ cd SCPToolbox_tutorial
   $ xargs sudo apt-get install <apt.txt
   ```
-  - Activate the `tutorial` package environment in Julia `Pkg` REPL, add `SCPToolbox.jl` as dependency and precompile:
+  - Activate the `tutorial.jl` package environment in Julia `Pkg` REPL, add `SCPToolbox.jl` as dependency and precompile:
   ```
   $ cd src
   julia> ]
