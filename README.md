@@ -25,13 +25,13 @@
   (tutorial) pkg> dev ../../scp_traj_opt/
   (tutorial) pkg> precompile
   ```
-  - Re-activate the base Julia environment and install and build `IJulia` package to obtain JupyterLab:
+  - Re-activate the base Julia environment and install/build `IJulia` package to obtain JupyterLab:
   ```
   (tutorial) pkg> activate
   (@v1.7) pkg> add IJulia
   (@v1.7) pkg> build IJulia
   ```
-  - Launch JupyterLab from Julia REPL. (Conda and JupyterLab installation self-contained in Julia will be automatically prompted)
+  - Launch JupyterLab from Julia REPL. (Conda and JupyterLab installation self-contained in Julia will be automatically prompted if they don't exist already.)
   ```
   julia> jupyterlab(dir=pwd())
   ```
