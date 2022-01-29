@@ -12717,9 +12717,7 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="SCP-Toolbox-Workshop">SCP Toolbox Workshop<a class="anchor-link" href="#SCP-Toolbox-Workshop">&#182;</a></h1><p><strong><em>A tutorial on generating dynamically feasible trajectories reliably and efficiently</em></strong></p>
 <p>Monday, February 7, 2022</p>
@@ -12728,34 +12726,26 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Part-1">Part 1<a class="anchor-link" href="#Part-1">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conic-Linear-Programs">Conic Linear Programs<a class="anchor-link" href="#Conic-Linear-Programs">&#182;</a></h2>
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>General form</strong>:</p>
 
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>\begin{align}
 \underset{x\in\mathbb{R}^n}{{\text{minimize}}} &amp;~ c^\top x \\
@@ -12765,18 +12755,14 @@ a.anchor-link {
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>where $c\in\mathbb{R}^n,~b\in\mathbb{R}^m,~A\in\mathbb{R}^{m\times n}$ are problem parameters, and $\mathbb{K}$ is a cartesian product of convex cones. The cones supported by <code>SCPToolbox.jl</code> are described in the table below.</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The optimization problem shown here can be solved using state-of-the-art solvers like <code>ECOS</code>, <code>Gurobi</code> and <code>Mosek</code>. However, they typically need a parser to convert the problem data to a canonical form. Hence such solvers are not user-friendly to interface with and solve problems which are not natively expressed in the canonical forms.</p>
 <p>In <code>SCPToolbox.jl</code>, henceforth refered to as the toolbox, a conic linear program is formulated by instantiating a <code>ConicProblem</code> object with the choice of solver and its associated options.</p>
@@ -12784,9 +12770,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr>
@@ -12859,7 +12843,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;verbose&quot;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">)</span>
@@ -12873,11 +12857,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[2]:</div>
-
 
 
 
@@ -12906,17 +12886,13 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Variables are generally broken up into three main categories:</p>
 <ul>
@@ -12928,9 +12904,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Each variable declared by the user is defined by a set of properties.</p>
 <ol>
@@ -12947,9 +12921,7 @@ a.anchor-link {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A scalar quantity may be simply defined as follows, without specifying a dimension.</p>
 
@@ -12958,7 +12930,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="nd">@new_variable</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="s">&quot;q&quot;</span><span class="p">)</span>
@@ -12971,11 +12943,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[5]:</div>
-
 
 
 
@@ -12999,9 +12967,7 @@ a.anchor-link {
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A vector variable is declared by defining a length dimension $&gt;1$. Note the value now has multiple elements.</p>
 
@@ -13010,7 +12976,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="nd">@new_variable</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;v&quot;</span><span class="p">)</span>
@@ -13023,11 +12989,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[6]:</div>
-
 
 
 
@@ -13053,9 +13015,7 @@ a.anchor-link {
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A matrix variable may be declared by defining dimensions $&gt;1$ for both rows and columns.</p>
 
@@ -13064,7 +13024,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="nd">@new_variable</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="s">&quot;y&quot;</span><span class="p">)</span>
@@ -13077,11 +13037,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[7]:</div>
-
 
 
 
@@ -13106,26 +13062,20 @@ a.anchor-link {
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Scaling">Scaling<a class="anchor-link" href="#Scaling">&#182;</a></h4>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Scaling is an important operation which improves numerical conditioning of the underlying optimization problem by applying an affine mapping to the physical quantity in order to produce a corresponding scaled quantity that lies approximately between 0 and 1.</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the scalar case, this affine mapping may be approximated as follows for physical quantity $x$ and scaled quantity $\hat{x}$:</p>
 <p>$x = a*\hat{x} + b$,</p>
@@ -13136,7 +13086,7 @@ a.anchor-link {
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">qh</span> <span class="o">=</span> <span class="nd">@new_variable</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="s">&quot;qh&quot;</span><span class="p">)</span>
@@ -13149,11 +13099,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[9]:</div>
-
 
 
 
@@ -13179,7 +13125,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@scale</span><span class="p">(</span><span class="n">qh</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
@@ -13190,9 +13136,7 @@ a.anchor-link {
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The value of this new affine mapping can be queried with the <code>value()</code> function as follows:</p>
 
@@ -13201,7 +13145,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">value</span><span class="p">(</span><span class="n">qh</span><span class="p">)</span>
@@ -13214,11 +13158,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[11]:</div>
-
 
 
 
@@ -13233,9 +13173,7 @@ a.anchor-link {
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To apply a different scaling to each element of a variable, diagonal entires of a matrix that scales each variable element may be defined. In addition, vector-value affine offsets may also be applied.</p>
 
@@ -13244,7 +13182,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@scale</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span><span class="mi">1</span><span class="p">])</span>
@@ -13257,7 +13195,7 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">value</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -13270,11 +13208,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[14]:</div>
-
 
 
 
@@ -13292,7 +13226,7 @@ a.anchor-link {
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">pbm</span>
@@ -13305,11 +13239,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[15]:</div>
-
 
 
 
@@ -13343,17 +13273,13 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Constraints">Constraints<a class="anchor-link" href="#Constraints">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A conic constraint $y\in\mathbb{K}$ (say for $\mathbb{K} = \mathbb{K}_2$) can be modelled in the toolbox as follows:</p>
 
@@ -13362,7 +13288,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;n&quot;</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">)</span>
@@ -13388,11 +13314,7 @@ a.anchor-link {
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[18]:</div>
-
 
 
 
@@ -13416,9 +13338,7 @@ Arguments:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note the use of <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> for searching though the list of variables names.</p>
 
@@ -13427,7 +13347,7 @@ Arguments:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">constraints</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="s">&quot;^my-soc&quot;</span><span class="p">)</span>
@@ -13440,11 +13360,7 @@ Arguments:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[20]:</div>
-
 
 
 
@@ -13468,43 +13384,33 @@ Arguments:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Many simple constraint set typical in a trajectory optimization problem like box, ball, halfspace and hyperplane can be represented as conic constraints.</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Box">Box<a class="anchor-link" href="#Box">&#182;</a></h3>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A box with bounds $l,u\in\mathbb{R}$ with $l&lt;u$ can be formulated as as non-positive orthant cone:</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$
 \{x\in\mathbb{R}^n~|~l\leq x \leq u\}
@@ -13518,7 +13424,7 @@ $$</p>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;n&quot;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;l&quot;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;u&quot;</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="p">)</span>
@@ -13545,11 +13451,7 @@ $$</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[21]:</div>
-
 
 
 
@@ -13574,26 +13476,20 @@ Arguments:
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Ball">Ball<a class="anchor-link" href="#Ball">&#182;</a></h3>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A ball with radius $r \in \mathbb{R}_+$ set can be represented as a $l_2$ norm cone (second-order cone):</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$
 \{x\in\mathbb{R}^n~|~\|x\|_2\leq r\}
@@ -13607,7 +13503,7 @@ $$</p>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;n&quot;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;r&quot;</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">)</span>
@@ -13634,11 +13530,7 @@ $$</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[22]:</div>
-
 
 
 
@@ -13662,26 +13554,20 @@ Arguments:
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Hyperplane">Hyperplane<a class="anchor-link" href="#Hyperplane">&#182;</a></h3>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A hyperplane defined by $a\in \mathbb{R}^n$ and $b\in\mathbb{R}$ can be represented as a zero cone:</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$
 \left\{x\in\mathbb{R}^n~|~a^\top x = b\right\}
@@ -13695,7 +13581,7 @@ $$</p>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;n&quot;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">;</span><span class="mf">3.2</span><span class="p">],</span> <span class="s">&quot;b&quot;</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="p">)</span>
@@ -13724,11 +13610,7 @@ $$</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A = [1.1 3.2]
@@ -13737,9 +13619,6 @@ $$</p>
 </div>
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[23]:</div>
-
 
 
 
@@ -13761,26 +13640,20 @@ Arguments:
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Halfspace">Halfspace<a class="anchor-link" href="#Halfspace">&#182;</a></h3>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A halfspace defined by $a\in \mathbb{R}^n$ and $b\in\mathbb{R}$ can be represented as a non-positive orthant cone:</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$
 \left\{x\in\mathbb{R}^n~|~a^\top x \leq b\right\}
@@ -13794,7 +13667,7 @@ $$</p>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;n&quot;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">;</span><span class="mf">3.2</span><span class="p">],</span> <span class="s">&quot;b&quot;</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="p">)</span>
@@ -13824,11 +13697,7 @@ $$</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>A * [1; 2] = [7.5]
@@ -13838,9 +13707,6 @@ $$</p>
 </div>
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[24]:</div>
-
 
 
 
@@ -13862,17 +13728,13 @@ Arguments:
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Objective-function">Objective function<a class="anchor-link" href="#Objective-function">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>This section explains how the <strong>objective function</strong> is defined. </li>
@@ -13881,9 +13743,7 @@ Arguments:
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Regardless of whether optimization problems have constraints or not, they seek to optimize a function with respect to  a chosen <em>objective</em>.</li>
@@ -13892,9 +13752,7 @@ Arguments:
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>i.e., they seek to either minimize a certain <em>cost</em> or maximize a certain <em>reward</em>. </li>
@@ -13903,9 +13761,7 @@ Arguments:
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>For example, propellant consumption is an important metric that is ideally optimized for (minimized) in a rocket-powered planetary landing mission. We may also want to minimize the total energy to go from one point to another.</li>
@@ -13914,18 +13770,14 @@ Arguments:
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Note</strong>: Although we take cost-minimization to be the default objective here, a problem can be easily cast as a reward-maximization problem by minimizing the negative of the objective function.</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us define a new optimization problem, but this time, with a user-defined constant parameter, <code>a</code>.</p>
 
@@ -13934,7 +13786,7 @@ Arguments:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">my_pars</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">)</span>
@@ -13949,11 +13801,7 @@ Arguments:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[25]:</div>
-
 
 
 
@@ -13982,9 +13830,7 @@ Arguments:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Next, we define a scalar variable, <code>x</code>.</p>
 
@@ -13993,7 +13839,7 @@ Arguments:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nd">@new_variable</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
@@ -14006,11 +13852,7 @@ Arguments:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[26]:</div>
-
 
 
 
@@ -14034,18 +13876,14 @@ Arguments:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we are ready to define our objective function, which we will henceforth refer to as simply "cost".</p>
 
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By default, the cost is initialized to zero when a new problem is generated. We use the <code>@add_cost</code> function to add terms to the cost <code>obj</code>.</p>
 
@@ -14054,7 +13892,7 @@ Arguments:
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="nd">@add_cost</span><span class="p">(</span>
@@ -14073,11 +13911,7 @@ Arguments:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[27]:</div>
-
 
 
 
@@ -14099,9 +13933,7 @@ Term 1:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><p>The first argument of the function is to indicate that we are adding the cost term to the problem we have defined, <code>pbm</code>.</p>
@@ -14115,9 +13947,7 @@ Term 1:
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The cost function we have included is as follows:</p>
 
@@ -14126,7 +13956,7 @@ Term 1:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">cost</span><span class="p">(</span><span class="n">pbm</span><span class="p">)</span>
@@ -14139,11 +13969,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[28]:</div>
-
 
 
 
@@ -14165,35 +13991,27 @@ Term 1:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Solve-problem">Solve problem<a class="anchor-link" href="#Solve-problem">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With everything we have learned so far, we are now ready to solve a convex optimization problem!</p>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We will start with a new problem for this example.</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As before, we begin by defining constant parameters to be passed to the solver.</p>
 
@@ -14202,7 +14020,7 @@ Term 1:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">problem_pars</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&quot;x_ref&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -14215,11 +14033,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[29]:</div>
-
 
 
 
@@ -14235,18 +14049,14 @@ Term 1:
 </div>
 
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, we have defined one scalar constant, <code>a</code>, and one 5-dimensional constant vector, <code>x_ref</code>.</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, we create a dictionary of options to be passed to the low-level optimizer. In this case, we set the <code>verbose</code> flag to <code>1</code> so that we can see the full output of the low-level optimizer.</p>
 
@@ -14255,7 +14065,7 @@ Term 1:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">opts</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="s">&quot;verbose&quot;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">)</span>
@@ -14268,11 +14078,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[30]:</div>
-
 
 
 
@@ -14287,9 +14093,7 @@ Term 1:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We now define our optimization problem. We shall make use of the open-source low-level convex optimization solver, ECOS.</p>
 
@@ -14298,7 +14102,7 @@ Term 1:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">pbm</span> <span class="o">=</span> <span class="n">ConicProgram</span><span class="p">(</span><span class="n">problem_pars</span><span class="p">;</span>
@@ -14313,11 +14117,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[31]:</div>
-
 
 
 
@@ -14346,9 +14146,7 @@ Term 1:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We define two variables, <code>t</code> of dimension 1, and <code>x</code> of dimension 5.</p>
 
@@ -14357,7 +14155,7 @@ Term 1:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nd">@new_variable</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">length</span><span class="p">(</span><span class="n">problem_pars</span><span class="p">[</span><span class="s">&quot;x_ref&quot;</span><span class="p">]),</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
@@ -14371,11 +14169,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[32]:</div>
-
 
 
 
@@ -14399,9 +14193,7 @@ Term 1:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we add a second-order cone (SOC) constraint, $\|x-x_{ref}\|_2 \le t$, to the problem.</p>
 
@@ -14410,7 +14202,7 @@ Term 1:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@add_constraint</span><span class="p">(</span>
@@ -14428,11 +14220,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[33]:</div>
-
 
 
 
@@ -14460,9 +14248,7 @@ Arguments:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We choose the cost function to be $t^{2}$.</p>
 
@@ -14471,7 +14257,7 @@ Arguments:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@add_cost</span><span class="p">(</span>
@@ -14489,11 +14275,7 @@ Arguments:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[34]:</div>
-
 
 
 
@@ -14515,9 +14297,7 @@ Term 1:
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We are finally ready to solve the problem we just defined!</p>
 
@@ -14526,7 +14306,7 @@ Term 1:
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">exit_status</span> <span class="o">=</span> <span class="n">solve!</span><span class="p">(</span><span class="n">pbm</span><span class="p">)</span>
@@ -14539,11 +14319,7 @@ Term 1:
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
@@ -14571,9 +14347,6 @@ Runtime: 0.000160 seconds.
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
-
-
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14586,9 +14359,7 @@ Runtime: 0.000160 seconds.
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The optimal cost value is <code>J_opt</code>.</p>
 
@@ -14597,7 +14368,7 @@ Runtime: 0.000160 seconds.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">J_opt</span> <span class="o">=</span> <span class="n">objective_value</span><span class="p">(</span><span class="n">pbm</span><span class="p">)</span>
@@ -14610,11 +14381,7 @@ Runtime: 0.000160 seconds.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[36]:</div>
-
 
 
 
@@ -14628,9 +14395,7 @@ Runtime: 0.000160 seconds.
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The optimal values of the decision variables are <code>x_opt</code> and <code>t_opt</code>.</p>
 
@@ -14639,7 +14404,7 @@ Runtime: 0.000160 seconds.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x_opt</span> <span class="o">=</span> <span class="n">value</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -14652,11 +14417,7 @@ Runtime: 0.000160 seconds.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[37]:</div>
-
 
 
 
@@ -14677,7 +14438,7 @@ Runtime: 0.000160 seconds.
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">t_opt</span> <span class="o">=</span> <span class="n">value</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -14690,11 +14451,7 @@ Runtime: 0.000160 seconds.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[38]:</div>
-
 
 
 
@@ -14709,9 +14466,7 @@ Runtime: 0.000160 seconds.
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The optimal values of the decision variables can also be accessed as mentioned before.</p>
 
@@ -14720,7 +14475,7 @@ Runtime: 0.000160 seconds.
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">value</span><span class="p">(</span><span class="n">variables</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="s">&quot;^x</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">))</span>
@@ -14733,11 +14488,7 @@ Runtime: 0.000160 seconds.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[39]:</div>
-
 
 
 
@@ -14758,7 +14509,7 @@ Runtime: 0.000160 seconds.
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">value</span><span class="p">(</span><span class="n">variables</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="s">&quot;^t</span><span class="se">\$</span><span class="s">&quot;</span><span class="p">))</span>
@@ -14771,11 +14522,7 @@ Runtime: 0.000160 seconds.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[40]:</div>
-
 
 
 
@@ -14790,18 +14537,14 @@ Runtime: 0.000160 seconds.
 </div>
 
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Congratulations!</p>
 
 </div>
 </div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We now know how to solve convex optimization problems, which form the basis for Sequential Convex Programming (SCP) problems, which we shall now get into with some exciting examples!</p>
 
