@@ -31,7 +31,7 @@
   (@v1.7) pkg> add IJulia
   (@v1.7) pkg> build IJulia
   ```
-  - Launch JupyterLab from Julia REPL. (Conda and JupyterLab installation self-contained in Julia will be automatically prompted if they don't exist already.)
+  - Launch JupyterLab from Julia REPL. (Conda and JupyterLab installation (self-contained in Julia) will be automatically prompted if they don't exist already.)
   ```
   julia> jupyterlab(dir=pwd())
   ```
