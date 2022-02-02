@@ -1,6 +1,8 @@
 # Tutorials for `SCPToolbox.jl`
 
-- To run the tutorial notebooks out-of-the-box click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dmalyuta/SCPToolbox_tutorial/HEAD).
+- To run the tutorial notebooks out-of-the-box click
+  - (Binder) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dmalyuta/SCPToolbox_tutorial/HEAD)
+  - (GESIS Binder) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/dmalyuta/SCPToolbox_tutorial/HEAD)
 - To set up a complete local installation (including `SCPToolbox.jl`) follow these steps:
   - Install Julia 1.7.1, Python 3.10 and matplotlib 3.5.1.  
   - Clone the `dev/binder` branch of `SCPToolbox.jl` from [here](https://github.com/dmalyuta/scp_traj_opt/tree/dev/binder) in `~/tmp`.
@@ -31,7 +33,7 @@
   (@v1.7) pkg> add IJulia
   (@v1.7) pkg> build IJulia
   ```
-  - Launch JupyterLab from Julia REPL. (Conda and JupyterLab installation self-contained in Julia will be automatically prompted if they don't exist already.)
+  - Launch JupyterLab from Julia REPL. (Conda and JupyterLab installation (self-contained in Julia) will be automatically prompted if they don't exist already.)
   ```
   julia> jupyterlab(dir=pwd())
   ```
