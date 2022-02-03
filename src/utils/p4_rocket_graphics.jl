@@ -3,6 +3,7 @@
 ##################################
 
 PyPlot.svg(true)
+@pyimport matplotlib.animation as matplotlib_animation
 
 function set_fonts()::Nothing
     # Set the figure fonts.
@@ -163,8 +164,8 @@ function visualize_trajectory()
 
     plt.title("Rocket-landing trajectory", fontsize=13, pad=12.5)
     ax.legend(fontsize=12, loc=2)
-
-    anim = matplotlib.animation.FuncAnimation(fig, animate, frames=Nc, interval=60)
+    
+    anim = matplotlib_animation.FuncAnimation(fig, animate, frames=Nc, interval=60)
     # plt.show()
     
     video = anim.to_html5_video()
