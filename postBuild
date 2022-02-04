@@ -6,8 +6,8 @@ cd /home/jovyan
 mkdir tutorial
 mv src tutorial
 mv *.toml tutorial
-git clone https://github.com/dmalyuta/scp_traj_opt
-cd scp_traj_opt
+git clone https://github.com/dmalyuta/SCPToolbox.jl.git
+cd SCPToolbox.jl
 git checkout dev/binder
 cd ../tutorial/src
-julia -e 'using Pkg; Pkg.activate(".."); Pkg.develop(path="../../scp_traj_opt/"); Pkg.precompile()'
+julia -e 'using Pkg; Pkg.activate(".."); Pkg.develop(path="../../SCPToolbox.jl/"); Pkg.precompile()'
