@@ -2,23 +2,23 @@
 
 ## To run the tutorial notebooks out-of-the-box:
 
-  - (Binder) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dmalyuta/SCPToolbox_tutorial/master?labpath=tutorial%2Fsrc%2Fp1_clp.ipynb)
-  - (GESIS Binder) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/dmalyuta/SCPToolbox_tutorial/master?labpath=tutorial%2Fsrc%2Fp1_clp.ipynb)
+  - (Binder) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-ACL/SCPToolbox_tutorial/master?labpath=tutorial%2Fsrc%2Fp1_clp.ipynb)
+  - (GESIS Binder) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/UW-ACL/SCPToolbox_tutorial/master?labpath=tutorial%2Fsrc%2Fp1_clp.ipynb)
 
 ## To set up a complete local installation (including `SCPToolbox.jl`) follow these steps:
 
   - Install `Julia v1.7.1`, `Python 3.10`, `matplotlib 3.5.1`, and `ffmpeg`.  
-  - Clone the `dev/binder` branch of `SCPToolbox.jl` from [here](https://github.com/dmalyuta/scp_traj_opt/tree/dev/binder) into `~/tmp`.
+  - Clone the `dev/binder` branch of `SCPToolbox.jl` from [here](https://github.com/UW-ACL/scp_traj_opt/tree/dev/binder) into `~/tmp`.
   ```
   $ cd ~/tmp
-  $ git clone https://github.com/dmalyuta/SCPToolbox.jl.git
+  $ git clone https://github.com/UW-ACL/SCPToolbox.jl.git
   $ cd SCPToolbox.jl
   $ git checkout dev/binder
   ```
   - Clone this tutorial repository into `~/tmp` and install TeX-related packages for plotting scripts in `SCPToolbox.jl`:
   ```
   $ cd ../
-  $ git clone https://github.com/dmalyuta/SCPToolbox_tutorial.git
+  $ git clone https://github.com/UW-ACL/SCPToolbox_tutorial.git
   $ cd SCPToolbox_tutorial
   $ xargs sudo apt-get install <apt.txt
   ```
