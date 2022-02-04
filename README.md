@@ -1,9 +1,12 @@
 # Tutorials for `SCPToolbox.jl`
 
-- To run the tutorial notebooks out-of-the-box click
+## To run the tutorial notebooks out-of-the-box:
+
   - (Binder) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dmalyuta/SCPToolbox_tutorial/HEAD)
   - (GESIS Binder) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/dmalyuta/SCPToolbox_tutorial/HEAD)
-- To set up a complete local installation (including `SCPToolbox.jl`) follow these steps:
+
+## To set up a complete local installation (including `SCPToolbox.jl`) follow these steps:
+
   - Install Julia 1.7.1, Python 3.10 and matplotlib 3.5.1.  
   - Clone the `dev/binder` branch of `SCPToolbox.jl` from [here](https://github.com/dmalyuta/scp_traj_opt/tree/dev/binder) in `~/tmp`.
   ```
@@ -37,4 +40,19 @@
   ```
   julia> jupyterlab(dir=pwd())
   ```
- 
+  
+## To generate slides from a Jupyter notebook:
+
+### Slide creation rubric
+
+| Slide             | Menu option  | Command       |
+| ----------------- | ------------ | ------------- |
+| New               | `Slide Type` | `Slide`       |
+| Persistent        | `Slide Type` | `Fragment`    |
+| Hide input only   | `Add Tag`    | `hide-input`  |
+| Hide output only  | `Add Tag`    | `hide-output` |
+| Hide entire cell  | `Slide Type` | `Skip`        |
+
+### Example command
+
+`jupyter nbconvert p1_clp.ipynb --to slides --no-prompt --TagRemovePreprocessor.remove_input_tags={\"hide-input\"} --TagRemovePreprocessor.remove_all_outputs_tags={\"hide-output\"} --post serve`
