@@ -2,6 +2,8 @@
 ### Plotting helper functions ###
 #################################
 
+PyPlot.svg(true)
+
 function set_fonts()::Nothing
     # Set the figure fonts.
     fig_small_sz = 12
@@ -28,8 +30,6 @@ set_fonts()
 #######################
 
 function plot_trajectory() 
-
-    PyPlot.svg(true)
 
     ctres, overlap = 1000, 3
     N = size(sol.xd, 2)
@@ -94,7 +94,7 @@ function plot_trajectory()
     # fig.savefig("media/p3_ptr_traj_reverse.png", bbox_inches="tight")
     # fig.savefig("media/p3_scvx_traj_reverse.png", bbox_inches="tight")
 
-    plt.show()
+    # plt.show()
     ;
     
 end
