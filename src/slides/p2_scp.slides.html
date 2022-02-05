@@ -14446,7 +14446,7 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># Linearized nonconvex constraint</span>
-<span class="n">lin_ncvx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">ν</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">ZERO</span><span class="p">,</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">ν</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">cst</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.+</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.+</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span> <span class="o">.+</span> <span class="n">ν</span><span class="p">);</span>
+<span class="n">lin_ncvx</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">ν</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">ZERO</span><span class="p">,</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">ν</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">cst</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.+</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.+</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span> <span class="o">.+</span> <span class="n">ν</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14461,7 +14461,7 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># Hyperplane constraint</span>
-<span class="n">hypln</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">ZERO</span><span class="p">,</span> <span class="n">z</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.-</span> <span class="mf">0.6</span><span class="p">);</span>
+<span class="n">hypln</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">ZERO</span><span class="p">,</span> <span class="n">z</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.6</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14476,7 +14476,7 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># Halfspace constraint</span>
-<span class="n">hlfsp</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">NONPOS</span><span class="p">,</span> <span class="n">z</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">.-</span> <span class="mf">0.85</span><span class="p">);</span>
+<span class="n">hlfsp</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">NONPOS</span><span class="p">,</span> <span class="n">z</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.85</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14491,7 +14491,7 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># Trust-region penalty constraint</span>
-<span class="n">tr_cnstr</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">η</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">SOC</span><span class="p">,</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">η</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">η</span><span class="p">,</span><span class="n">z</span> <span class="o">.-</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">]));</span>
+<span class="n">tr_cnstr</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">η</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">SOC</span><span class="p">,</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">η</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">η</span><span class="p">,</span> <span class="n">z</span> <span class="o">.-</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">]));</span>
 </pre></div>
 
      </div>
@@ -14506,7 +14506,7 @@ div.jp-OutputPrompt {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="c"># Virtual buffer penalty constraint</span>
-<span class="n">vb_cnstr</span><span class="p">(</span><span class="n">ν</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">L1</span><span class="p">,</span> <span class="p">(</span><span class="n">ν</span><span class="p">,</span><span class="n">μ</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">μ</span><span class="p">,</span><span class="n">ν</span><span class="p">));</span>
+<span class="n">vb_cnstr</span><span class="p">(</span><span class="n">ν</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_constraint</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="n">L1</span><span class="p">,</span> <span class="p">(</span><span class="n">ν</span><span class="p">,</span> <span class="n">μ</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">μ</span><span class="p">,</span> <span class="n">ν</span><span class="p">));</span>
 </pre></div>
 
      </div>
@@ -14524,7 +14524,7 @@ div.jp-OutputPrompt {
 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">cost_fun</span><span class="p">(</span><span class="n">η</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_cost</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="p">(</span><span class="n">η</span><span class="p">,</span><span class="n">μ</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.+</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;wtr&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">η</span> <span class="o">.+</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;wvb&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">μ</span><span class="p">);</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">cost_fun</span><span class="p">(</span><span class="n">η</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">pbm</span><span class="p">)</span> <span class="o">=</span> <span class="nd">@add_cost</span><span class="p">(</span><span class="n">pbm</span><span class="p">,</span> <span class="p">(</span><span class="n">η</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">.+</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;wtr&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">η</span> <span class="o">.+</span> <span class="n">cst</span><span class="p">[</span><span class="s">&quot;wvb&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">μ</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14585,7 +14585,7 @@ div.jp-OutputPrompt {
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="SCP-configuration">SCP configuration<a class="anchor-link" href="#SCP-configuration">&#182;</a></h2>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 
@@ -14603,30 +14603,12 @@ div.jp-OutputPrompt {
 <span class="n">iter_max</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">ϵ_conv</span> <span class="o">=</span> <span class="mf">1e-6</span>
 <span class="n">params</span><span class="p">[</span><span class="s">&quot;wtr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="n">params</span><span class="p">[</span><span class="s">&quot;wvb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10000.0</span>
+<span class="n">params</span><span class="p">[</span><span class="s">&quot;wvb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">10000.0</span><span class="p">;</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>10000.0</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div></div></section></section><section><section>
@@ -14639,7 +14621,7 @@ div.jp-OutputPrompt {
 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">solve_pbm!</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">z_hist</span><span class="p">,</span><span class="n">η_hist</span><span class="p">,</span><span class="n">μ_hist</span><span class="p">)</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">solve_pbm!</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">z_hist</span><span class="p">,</span> <span class="n">η_hist</span><span class="p">,</span> <span class="n">μ_hist</span><span class="p">)</span>
     <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>   
     <span class="n">iter_conv</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">while</span> <span class="kc">true</span>
@@ -14648,18 +14630,20 @@ div.jp-OutputPrompt {
         <span class="n">exit_flag</span> <span class="o">=</span> <span class="n">solve!</span><span class="p">(</span><span class="n">pbm</span><span class="p">)</span>                                                <span class="c"># Solve subproblem</span>
 
         <span class="n">z_hist</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">η_hist</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">μ_hist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">value</span><span class="p">(</span><span class="n">η</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">value</span><span class="p">(</span><span class="n">μ</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>   <span class="c"># Save subproblem solution</span>
+        <span class="n">cost_hist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">z_hist</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
 
         <span class="n">bool_conv</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">η_hist</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">μ_hist</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">ϵ_conv</span>                         <span class="c"># Check stopping criterion</span>
 
         <span class="k">if</span> <span class="n">params</span><span class="p">[</span><span class="s">&quot;scp-verbose&quot;</span><span class="p">]</span>
-            <span class="nd">@printf</span><span class="p">(</span><span class="s">&quot;Iteration </span><span class="si">%d</span><span class="s"> | </span><span class="si">%s</span><span class="s"> | Trust region: </span><span class="si">%7.1e</span><span class="s"> | Virtual buffer: </span><span class="si">%7.1e</span><span class="s"> | Cost: </span><span class="si">%.2f</span><span class="s"> |</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">string</span><span class="p">(</span><span class="n">exit_flag</span><span class="p">),</span><span class="n">η_hist</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">abs</span><span class="p">(</span><span class="n">μ_hist</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span><span class="n">cost_hist</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="c"># @printf(&quot;Iteration %d | %s | Trust region: %7.1e | Virtual buffer: %7.1e </span>
+            <span class="c"># | Cost: %.2f |\n&quot;,k,string(exit_flag),η_hist[k],abs(μ_hist[k]),cost_hist[k])</span>
         <span class="k">end</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="n">iter_max</span><span class="p">)</span> <span class="o">||</span> <span class="n">bool_conv</span>                                        <span class="c"># Stop at maximum iterations</span>
             <span class="n">iter_conv</span> <span class="o">=</span> <span class="n">k</span>        
             <span class="k">break</span>
         <span class="k">else</span>
-            <span class="n">params</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">]</span> <span class="o">.=</span> <span class="n">z_hist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>                                            <span class="c"># Update next reference trajectory as current solution    </span>
+            <span class="n">params</span><span class="p">[</span><span class="s">&quot;z̄&quot;</span><span class="p">]</span> <span class="o">.=</span> <span class="n">z_hist</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>                                           <span class="c"># Update reference trajectory</span>
             <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">end</span>
     <span class="k">end</span>
@@ -14672,13 +14656,13 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">iter_conv</span> <span class="o">=</span> <span class="n">solve_pbm!</span><span class="p">(</span><span class="n">params</span><span class="p">,</span><span class="n">z_hist</span><span class="p">,</span><span class="n">η_hist</span><span class="p">,</span><span class="n">μ_hist</span><span class="p">);</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="n">iter_conv</span> <span class="o">=</span> <span class="n">solve_pbm!</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">z_hist</span><span class="p">,</span> <span class="n">η_hist</span><span class="p">,</span> <span class="n">μ_hist</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -14686,48 +14670,17 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Iteration 1 | OPTIMAL | Trust region: 9.9e-01 | Virtual buffer: 5.1e-01 | Cost: 0.00 |
-Iteration 2 | OPTIMAL | Trust region: 1.2e-01 | Virtual buffer: 3.1e-14 | Cost: 0.00 |
-Iteration 3 | OPTIMAL | Trust region: 8.5e-03 | Virtual buffer: 1.4e-13 | Cost: 0.00 |
-Iteration 4 | OPTIMAL | Trust region: 4.6e-05 | Virtual buffer: 7.6e-13 | Cost: 0.00 |
-Iteration 5 | OPTIMAL | Trust region: 4.3e-13 | Virtual buffer: 1.2e-14 | Cost: 0.00 |
-</pre>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center>
+    <br />
+    <img src="media/p2_output.png" width="750"/>
+    <br />
+</center>
 </div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
-
-<div class="jp-Cell-outputWrapper">
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-
-Optimal solution: [0.7262087350647175, 0.5273791266363734]</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Validating-SCP-solution-via-JuMP">Validating SCP solution via JuMP<a class="anchor-link" href="#Validating-SCP-solution-via-JuMP">&#182;</a></h1>
+<h2 id="Validating-SCP-solution-via-JuMP">Validating SCP solution via JuMP<a class="anchor-link" href="#Validating-SCP-solution-via-JuMP">&#182;</a></h2>
 </div>
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14736,24 +14689,24 @@ Optimal solution: [0.7262087350647175, 0.5273791266363734]</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">solve_JuMP</span><span class="p">()</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span>                                                                <span class="c"># Define JuMP model and NLP solver</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span>                                       <span class="c"># Define JuMP model and NLP solver</span>
         <span class="n">optimizer_with_attributes</span><span class="p">(</span>
             <span class="n">Ipopt</span><span class="o">.</span><span class="n">Optimizer</span><span class="p">,</span> <span class="s">&quot;print_level&quot;</span> <span class="o">=&gt;</span> <span class="mi">0</span>
         <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="nd">@variable</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="p">])</span>                                                       <span class="c"># Declare variables</span>
+    <span class="nd">@variable</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="p">])</span>                             <span class="c"># Declare variables</span>
 
-    <span class="nd">@NLconstraint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>                                       <span class="c"># Nonconvex quadratic equality constraint</span>
+    <span class="nd">@NLconstraint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>             <span class="c"># Nonconvex quadratic equality constraint</span>
 
-    <span class="nd">@constraint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="kt">Matrix</span><span class="p">([</span><span class="mf">0.1</span> <span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">z</span> <span class="o">.-</span> <span class="mf">0.6</span> <span class="o">.==</span> <span class="mi">0</span><span class="p">)</span>                              <span class="c"># Convex constraints</span>
-    <span class="nd">@constraint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="kt">Matrix</span><span class="p">([</span><span class="mi">1</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">z</span> <span class="o">.-</span> <span class="mf">0.85</span> <span class="o">.≤</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="nd">@objective</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">Min</span><span class="p">,</span><span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nd">@constraint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="kt">Matrix</span><span class="p">([</span><span class="mf">0.1</span> <span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">z</span> <span class="o">.-</span> <span class="mf">0.6</span> <span class="o">.==</span> <span class="mi">0</span><span class="p">)</span>   <span class="c"># Convex constraints</span>
+    <span class="nd">@constraint</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="kt">Matrix</span><span class="p">([</span><span class="mi">1</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">z</span> <span class="o">.-</span> <span class="mf">0.85</span> <span class="o">.≤</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nd">@objective</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-    <span class="n">set_start_value</span><span class="o">.</span><span class="p">(</span><span class="n">all_variables</span><span class="p">(</span><span class="n">model</span><span class="p">),</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>                                <span class="c"># Initial guess to NLP solver</span>
+    <span class="n">set_start_value</span><span class="o">.</span><span class="p">(</span><span class="n">all_variables</span><span class="p">(</span><span class="n">model</span><span class="p">),</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>       <span class="c"># Initial guess to NLP solver</span>
 
-    <span class="n">optimize!</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>                                                              <span class="c"># Parse and call to solver </span>
-    <span class="k">return</span> <span class="n">JuMP</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">model</span>
+    <span class="n">optimize!</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>                                     <span class="c"># Parse and call to solver </span>
+    <span class="k">return</span> <span class="n">JuMP</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">model</span>
 <span class="k">end</span><span class="p">;</span>
 </pre></div>
 
@@ -14762,6 +14715,16 @@ Optimal solution: [0.7262087350647175, 0.5273791266363734]</pre>
 </div>
 </div>
 
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Optimal-Solutions">Optimal Solutions<a class="anchor-link" href="#Optimal-Solutions">&#182;</a></h3>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><br><br/>
+<strong>Solution using <code>SCPToolbox.jl</code></strong>:</p>
+
+</div>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
@@ -14772,8 +14735,7 @@ Optimal solution: [0.7262087350647175, 0.5273791266363734]</pre>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>
-
-Optimal solution: [0.7262087348131022, 0.5273791265186897]</pre>
+SCPToolbox.jl: [0.7262087350647175, 0.5273791266363734]</pre>
 </div>
 </div>
 
@@ -14781,21 +14743,31 @@ Optimal solution: [0.7262087348131022, 0.5273791265186897]</pre>
 
 </div>
 
-</div></div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="SCP-for-Trajectory-Optimization">SCP for Trajectory Optimization<a class="anchor-link" href="#SCP-for-Trajectory-Optimization">&#182;</a></h1>
+<p><br><br/>
+<strong>Verified solution using <code>JuMP</code> and <code>Ipopt</code></strong>:</p>
+
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<center>
-    <br />
-    <img src="media/p2-scp-diag2.png" width="600"/>
-    <br />
-    <b>Figure.</b> A high-level description of the SCP algorithm for trajectory optimization problems, where the solution is a time history of states rather than a single point. 
-    <br />
-</center>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 </div>
-</div></section></section>
+</div>
+
+</div>
+
+</div>
+
+</div></div></section></section>
 </div>
 </div>
 </body>
