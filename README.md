@@ -8,12 +8,12 @@
 ## To set up a complete local installation (including `SCPToolbox.jl`) follow these steps:
 
   - Install `Julia v1.7.1`, `Python 3.10`, `matplotlib 3.5.1`, and `ffmpeg`.  
-  - Clone the `master` branch of `SCPToolbox.jl` from [here](https://github.com/UW-ACL/SCPToolbox.jl/tree/dev/binder) into `~/tmp`.
+  - Clone the `master` branch of `SCPToolbox.jl` from [here](https://github.com/UW-ACL/SCPToolbox.jl/tree/master) into `~/tmp`.
   ```
   $ cd ~/tmp
   $ git clone https://github.com/UW-ACL/SCPToolbox.jl.git
   $ cd SCPToolbox.jl
-  $ git checkout dev/binder
+  $ git checkout master
   ```
   - Clone this tutorial repository into `~/tmp` and install TeX-related packages for plotting scripts in `SCPToolbox.jl`:
   ```
