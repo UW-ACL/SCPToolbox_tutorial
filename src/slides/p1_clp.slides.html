@@ -14480,25 +14480,25 @@ div.jp-OutputPrompt {
 <td style="text-align:center"><code>L1</code></td>
 <td style="text-align:center">$\mathbb{K}_{1}$</td>
 <td style="text-align:center">$l_1$ norm cone</td>
-<td style="text-align:center">$\{(t,x)\in\mathbb{R}^n\times\mathbb{R}\mid |x|_1\leq t\}$</td>
+<td style="text-align:center">$\{(t,x)\in\mathbb{R}\times\mathbb{R}^n\mid |x|_1\leq t\}$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>SOC</code></td>
 <td style="text-align:center">$\mathbb{K}_{2}$</td>
 <td style="text-align:center">$l_2$ norm cone</td>
-<td style="text-align:center">$\{(t,x)\in\mathbb{R}^n\times\mathbb{R}\mid |x|_2\leq t\}$</td>
+<td style="text-align:center">$\{(t,x)\in\mathbb{R}\times\mathbb{R}^n\mid |x|_2\leq t\}$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>LINF</code></td>
 <td style="text-align:center">$\mathbb{K}_{\infty}$</td>
 <td style="text-align:center">$l_\infty$ norm cone</td>
-<td style="text-align:center">$\{(t,x)\in\mathbb{R}^n\times\mathbb{R}\mid |x|_\infty\leq t\}$</td>
+<td style="text-align:center">$\{(t,x)\in\mathbb{R}\times\mathbb{R}^n\mid |x|_\infty\leq t\}$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>GEOM</code></td>
 <td style="text-align:center">$\mathbb{K}_{\text{GM}}$</td>
 <td style="text-align:center">Geometric mean cone</td>
-<td style="text-align:center">$ \big\{ (t,x)\in\mathbb{R}^n\times\mathbb{R}\mid \left(\prod_{i=1}^n x_i\right)^{1/n} \geq t \big\}$</td>
+<td style="text-align:center">$ \big\{ (t,x)\in\mathbb{R}\times\mathbb{R}^n\mid \left(\prod_{i=1}^n x_i\right)^{1/n} \geq t \big\}$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>EXP</code></td>
@@ -14604,8 +14604,8 @@ div.jp-OutputPrompt {
   1 elements
   (1,) shape
   Name: q
-  Block index in stack: 2
-  Indices in stack: 2
+  Block index in stack: 1
+  Indices in stack: 1
   Type: Vector{JuMP.AffExpr}
   No scaling (x=xh)
   Any perturbation allowed
@@ -14651,8 +14651,8 @@ div.jp-OutputPrompt {
   3 elements
   (3,) shape
   Name: v
-  Block index in stack: 3
-  Indices in stack: 3:5
+  Block index in stack: 2
+  Indices in stack: 2:4
   Type: Vector{JuMP.AffExpr}
   No scaling (x=xh)
   Any perturbation allowed
@@ -14700,8 +14700,8 @@ div.jp-OutputPrompt {
   10 elements
   (2, 5) shape
   Name: y
-  Block index in stack: 4
-  Indices in stack: 6:15
+  Block index in stack: 3
+  Indices in stack: 5:14
   Type: Matrix{JuMP.AffExpr}
   No scaling (x=xh)
   Any perturbation allowed
@@ -14864,18 +14864,17 @@ div.jp-OutputPrompt {
 <pre>Conic linear program
 
   Feasibility problem
-  16 variables (5 blocks)
+  15 variables (4 blocks)
   0 parameters (0 blocks)
   0 constraints
 
   Variable argument
-    16 elements
-    5 blocks
-     1) 1    ... x
-     2) 2    ... q
-     3) 3:5  ... v
-     4) 6:15 ... y
-     5) 16   ... qh
+    15 elements
+    4 blocks
+     1) 1    ... q
+     2) 2:4  ... v
+     3) 5:14 ... y
+     4) 15   ... p
 
   Parameter argument
     0 elements
@@ -14930,15 +14929,15 @@ div.jp-OutputPrompt {
 Cone f(x,p)∈K, where:
 K is a second-order cone, {(t, x)∈ℝ×ℝⁿ : ‖x‖₂≤t}
 f(x,p) = 
-  100 x2
-  x1[1]
-  x1[2]
-  x1[3]
-  x1[4]
+  100 t
+  x[1]
+  x[2]
+  x[3]
+  x[4]
 Affine function
 Arguments:
-  x1 (block 1) : 1:4
-  x2 (block 2) : 5
+  x (block 1) : 1:4
+  t (block 2) : 5
 </pre>
 </div>
 
@@ -14980,15 +14979,15 @@ Arguments:
 Cone f(x,p)∈K, where:
 K is a second-order cone, {(t, x)∈ℝ×ℝⁿ : ‖x‖₂≤t}
 f(x,p) = 
-  100 x2
-  x1[1]
-  x1[2]
-  x1[3]
-  x1[4]
+  100 t
+  x[1]
+  x[2]
+  x[3]
+  x[4]
 Affine function
 Arguments:
-  x1 (block 1) : 1:4
-  x2 (block 2) : 5
+  x (block 1) : 1:4
+  t (block 2) : 5
 </pre>
 </div>
 
