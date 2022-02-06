@@ -6,7 +6,7 @@ cd /home/jovyan
 mkdir tutorial
 mv src tutorial
 mv *.toml tutorial
-git clone https://github.com/dmalyuta/SCPToolbox.jl.git
+git clone https://github.com/UW-ACL/SCPToolbox.jl.git
 cd SCPToolbox.jl
 git checkout master
 cd ../tutorial/src
