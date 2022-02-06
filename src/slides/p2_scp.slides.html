@@ -14394,12 +14394,14 @@ div.jp-OutputPrompt {
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Solve the following nonconvex optimization problem as a simple conic linear program subproblem:</p>
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 \underset{z}{\text{minimize}} &amp;\quad L(z) \triangleq z_2 \\
 \text{subject to} &amp;\quad \color{#000080}{z_2 - z_1^2 = 0}\\
  &amp;\quad \color{#008000}{z_2 + 0.1 z_1 = 0.6}\\
  &amp;\quad \color{#FF00FF}{z_1 \leq 0.85}
-\end{align}
+\end{aligned}
+\end{equation*}
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14413,25 +14415,29 @@ div.jp-OutputPrompt {
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 \underset{z}{\text{minimize}} &amp;\quad z_2 + w_{\text{tr}}\color{#FF0000}{\eta} + w_{\text{vb}}\color{#000080}{|\nu|} \\
 \text{subject to} &amp;\quad  \color{#000080}{(-2\bar{z}_1)z_1 + z_2 + \bar{z}_1^2 + \nu = 0}  \\
  &amp;\quad \color{#008000}{z_2 + 0.1 z_1 = 0.6}\\
  &amp;\quad \color{#FF00FF}{z_1 \leq 0.85} \\
  &amp;\quad \color{#FF0000 }{\| z - \bar{z} \|_2 \leq \eta}
-\end{align}<p>The subproblem described above is still not a CLP since the objective function is not linear. The virtual buffer penalty is converted to a conic constraint via the epigraph form by introducing a slack variable $\mu$.</p>
+\end{aligned}
+\end{equation*}<p>The subproblem described above is still not a CLP since the objective function is not linear. The virtual buffer penalty is converted to a conic constraint via the epigraph form by introducing a slack variable $\mu$.</p>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 \underset{z}{\text{minimize}} &amp;\quad z_2 + w_{\text{tr}}\color{#FF0000}{\eta} + w_{\text{vb}}\color{#000080}{\mu}\\
 \text{subject to} &amp;\quad  \color{#000080}{(-2\bar{z}_1)z_1 + z_2 + \bar{z}_1^2 + \nu = 0}  \\
  &amp;\quad \color{#008000}{z_2 + 0.1 z_1 = 0.6}\\
  &amp;\quad \color{#FF00FF}{z_1 \leq 0.85} \\
  &amp;\quad \color{#FF0000 }{\| z - \bar{z} \|_2 \leq \eta} \\
  &amp;\quad \color{#000080}{|\nu| \leq \mu}
-\end{align}
+\end{aligned}
+\end{equation*}
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14767,7 +14773,7 @@ JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="SCPToolbox.jl-Cheat-Sheet"><code>SCPToolbox.jl</code> Cheat Sheet<a class="anchor-link" href="#SCPToolbox.jl-Cheat-Sheet">&#182;</a></h2>
+<h2 id="ConicProgram-Cheat-Sheet"><code>ConicProgram</code> Cheat Sheet<a class="anchor-link" href="#ConicProgram-Cheat-Sheet">&#182;</a></h2>
 </div>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14788,7 +14794,7 @@ JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 </tr>
 <tr>
 <td></td>
-<td><code>x = @new_variable(pbm, 1, "x"</code></td>
+<td><code>x = @new_variable(pbm, 1, "x")</code></td>
 </tr>
 <tr>
 <td>Create vector variable</td>
@@ -14804,10 +14810,10 @@ JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 </tr>
 <tr>
 <td>Scale variable</td>
-<td><code>@scale(x,5,1)</code></td>
+<td><code>@scale(x, 5, 1)</code></td>
 </tr>
 <tr>
-<td>Variable value</td>
+<td>Query variable value</td>
 <td><code>value(x)</code></td>
 </tr>
 <tr>
@@ -14852,15 +14858,17 @@ JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 </div>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-\begin{array}{ll}
-\underset{u,\ p}{\text{minimize}} &amp; J(x, u, p) \\
-\text{subject to} &amp; \dot{x}(t)=f(t, x(t), u(t), p), \\
-&amp; (x(t), p) \in \mathcal{X}(t), \\
-&amp; (u(t), p) \in \mathcal{U}(t), \\
-&amp; s(t, x(t), u(t), p) \leq 0, \\
-&amp; g_{\text {ic}}(x(0), p)=0, \\
-&amp; g_{\text {tc}}(x(1), p)=0
-\end{array}
+\begin{equation*}
+\begin{aligned}
+\underset{u,\ p}{\text{minimize}} &amp;~ J(x, u, p) \\
+\text{subject to} &amp;~ \dot{x}(t)=f(t, x(t), u(t), p), \\
+&amp;~ (x(t), p) \in \mathcal{X}(t), \\
+&amp;~ (u(t), p) \in \mathcal{U}(t), \\
+&amp;~ s(t, x(t), u(t), p) \leq 0, \\
+&amp;~ g_{\text {ic}}(x(0), p)=0, \\
+&amp;~ g_{\text {tc}}(x(1), p)=0
+\end{aligned}
+\end{equation*}
 </div>
 </div></div></section></section>
 </div>

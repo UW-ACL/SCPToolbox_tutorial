@@ -14448,9 +14448,9 @@ div.jp-OutputPrompt {
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In general, the dynamics of any nonlinear system are given by:</p>
-$$
+\begin{equation*}
 \dot x(t) = f( t, x(t), u(t), p )
-$$<ul>
+\end{equation*}<ul>
 <li>$t\in \mathbb R$: time;</li>
 <li>$x(t)\in \mathbb R^n$: state vector;</li>
 <li>$u(t)\in \mathbb R^m$: input vector (the things that we can decide on);</li>
@@ -14465,15 +14465,15 @@ $$<ul>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The toolbox assumes that time is normalized: $t\in [0,1]$. Consider a system whose dynamics are:</p>
-$$
+\begin{equation*}
 \dot x(\tau) = \tilde f( \tau, x(\tau), u(\tau)),
-$$<p>where $\tau\in [0, t_f]$ is our regular "wall clock" time. Then:</p>
-$$
+\end{equation*}<p>where $\tau\in [0, t_f]$ is our regular "wall clock" time. Then:</p>
+\begin{equation*}
 \tau = t_f \cdot t.
-$$<p>This transformation lets us re-write the dynamics in normalized time:</p>
-$$
+\end{equation*}<p>This transformation lets us re-write the dynamics in normalized time:</p>
+\begin{equation*}
 \frac{dx}{dt} = t_f \tilde f(t, x, u) \equiv f(t, x, u, p),
-$$<p>where $p=t_f$ and $f=p\cdot\tilde f$.</p>
+\end{equation*}<p>where $p=t_f$ and $f=p\cdot\tilde f$.</p>
 
 </div>
 </div></div></section></section><section><section>
@@ -14486,7 +14486,7 @@ $$<p>where $p=t_f$ and $f=p\cdot\tilde f$.</p>
     <br />
     <br />
 </center><p>Dynamics in absolute time:</p>
-\begin{equation}
+\begin{equation*}
 \begin{array}{rl}
 \dot{x} &amp;= v\sin(\theta), \\
 \dot{y} &amp;= v\cos(\theta), \\
@@ -14502,7 +14502,7 @@ v\sin(\theta) \\
 v\cos(\theta) \\
 \omega
 \end{bmatrix} = f(x, u),
-\end{equation}<p>where $x=[x;~y;~\theta]$ and $u=[v;~\omega]$.</p>
+\end{equation*}<p>where $x=[x;~y;~\theta]$ and $u=[v;~\omega]$.</p>
 <p>In normalized time, we simply write as before $f\leftarrow p\cdot f$ where $p$ is the parameter vector holding just one element, the final time.</p>
 
 </div>
@@ -14555,11 +14555,13 @@ v\cos(\theta) \\
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>SCP algorithms work by iteratively linearizing nonconvex elements of the problem. This means that we have to provide the algorithm with the Jacobians of $f$.</p>
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 A(t, x, u, p) &amp;= \nabla_x f(t, x, u, p), \\
 B(t, x, u, p) &amp;= \nabla_u f(t, x, u, p), \\
 F(t, x, u, p) &amp;= \nabla_p f(t, x, u, p).
-\end{align}
+\end{aligned}
+\end{equation*}
 </div>
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14619,19 +14621,24 @@ F(t, x, u, p) &amp;= \nabla_p f(t, x, u, p).
 </div>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The initial and terminal boundary conditions on the trajectory are set by the following two constraints:</p>
-\begin{align}
+<p>The initial and terminal boundary conditions on the trajectory are set by the following two constraints:
+\begin{equation*}
+\begin{aligned}
 g_{ic}(x(0), p) &amp;= 0, \\
 g_{tc}(x(1), p) &amp;= 0.
-\end{align}
+\end{aligned}
+\end{equation*}</p>
+
 </div>
 </div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In the case of Dubin's car, let's just set some simple fixed start and end points:</p>
-\begin{align}
-[x(0); y(0); \theta(0)] = [0;0;0], \\
-[x(t_f); y(t_f); \theta(t_f)] = [0;2;0].
-\end{align}
+\begin{equation*}
+\begin{aligned}
+\left[x(0);~ y(0);~ \theta(0)\right] &amp;= [0;0;0], \\
+\left[x(t_f);~ y(t_f);~ \theta(t_f)\right] &amp;= [0;2;0].
+\end{aligned}
+\end{equation*}
 </div>
 </div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14706,26 +14713,26 @@ K_f(x(1), p) &amp;= \nabla_p g_{tc}(x(1), p).
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Nonconvex-Obstacle-Constraint">Nonconvex Obstacle Constraint<a class="anchor-link" href="#Nonconvex-Obstacle-Constraint">&#182;</a></h2><p>Nonconvex obstacle constraints are encoded by the following inequality constraint:</p>
-$$
+\begin{equation*}
 s(t, x(t), u(t), p) \le 0,
-$$<p>where $s(\cdot)\in\mathbb R^{n_s}$ is a continuously differentiable multidimensional function.</p>
+\end{equation*}<p>where $s(\cdot)\in\mathbb R^{n_s}$ is a continuously differentiable multidimensional function.</p>
 
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>A circular obstacle of radius $r_0$ centered at $c_0$ can be avoided using the following constraint:</p>
-$$
+\begin{equation*}
 \|E_{xy} x - c_0\|_2^2 \ge r_0^2,
-$$<p>where the state is the usual $x=[x;y;\theta]$ and $E_{xy} = \begin{bmatrix}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\end{bmatrix}$.</p>
+\end{equation*}<p>where the state is the usual $x=[x;y;\theta]$ and $E_{xy} = \begin{bmatrix}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0\end{bmatrix}$.</p>
 <p>This is equivalent to setting $s(t, x, u, p) = r_0^2-\|E_{xy} x-c_0\|_2^2$.</p>
 
 </div>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <blockquote><p>⚠️ <strong>Protip</strong>: this constraint definition neglects that a real car is not a point, and has some size itself. To keep the car's body away from the obstactly, we can "inflate" the obstacle by some additional keepout factor $\Delta r_0$:
-$$
+\begin{equation*}
 s(t, x, u, p) = (r_0+\Delta r_0)^2-\|E_{xy} x-c_0\|_2^2.
-$$</p>
+\end{equation*}</p>
 </blockquote>
 
 </div>
@@ -14752,11 +14759,13 @@ $$</p>
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Once again, we need to define the Jacobians of $s$. You are probably used to this by now 🤓.</p>
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 C(t, x, u, p) &amp;= \nabla_x s(t, x, u, p), \\
 D(t, x, u, p) &amp;= \nabla_u s(t, x, u, p), \\
 G(t, x, u, p) &amp;= \nabla_p s(t, x, u, p).
-\end{align}<p>Again, the toolbox assumes zero for the Jacobians that are not provided.</p>
+\end{aligned}
+\end{equation*}<p>Again, the toolbox assumes zero for the Jacobians that are not provided.</p>
 
 </div>
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14825,9 +14834,9 @@ G(t, x, u, p) &amp;= \nabla_p s(t, x, u, p).
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Borrowing from the standard choice in optimal control literature, the SCP Toolbox works with an objective function in the Bolza form:</p>
-$$
+\begin{equation*}
 J(x, u, p) = \phi(x(1), p) + \int_0^1 \Gamma(x(t), u(t), p) dt.\nonumber
-$$<p>The function $\phi(\cdot)\in\mathbb R$ defines the terminal cost, while $\Gamma(\cdot)\in\mathbb R$ defines the running cost. Both have to be convex, at most quadratic, functions.</p>
+\end{equation*}<p>The function $\phi(\cdot)\in\mathbb R$ defines the terminal cost, while $\Gamma(\cdot)\in\mathbb R$ defines the running cost. Both have to be convex, at most quadratic, functions.</p>
 <blockquote><p>ℹ️ Any nonconvexity in the cost can in general be off-loaded into the constraints by defining additional state, control, and/or parameter variables.</p>
 </blockquote>
 
@@ -14835,10 +14844,12 @@ $$<p>The function $\phi(\cdot)\in\mathbb R$ defines the terminal cost, while $\G
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>For Dubin's car, let's solve a trajectory that minimizes average control usage. For example, we can set:</p>
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 \Gamma(x, u, p) &amp;= u^\top u, \\
 \phi(x(1), p) &amp;= 0.
-\end{align}
+\end{aligned}
+\end{equation*}
 </div>
 </div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14887,10 +14898,12 @@ $$<p>The function $\phi(\cdot)\in\mathbb R$ defines the terminal cost, while $\G
 <p>SCP algorithms require an initial guess for the trajectory. This can be very simple, and does not need to be feasible.</p>
 <p>For Dubin's car, we will use a straight line for the state and zero for the input.</p>
 <p>Given a time $t\in [0,1]$, the state initial guess will be:</p>
-\begin{align}
+\begin{equation*}
+\begin{aligned}
 \bar x(t) &amp;= (1-t) x_0 + t x_f, \\
 \bar u(t) &amp;= 0.
-\end{align}
+\end{aligned}
+\end{equation*}
 </div>
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
