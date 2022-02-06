@@ -14767,7 +14767,88 @@ JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 
 </div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="SCP-for-Trajectory-Optimization">SCP for Trajectory Optimization<a class="anchor-link" href="#SCP-for-Trajectory-Optimization">&#182;</a></h1>
+<h2 id="SCPToolbox.jl-Cheat-Sheet"><code>SCPToolbox.jl</code> Cheat Sheet<a class="anchor-link" href="#SCPToolbox.jl-Cheat-Sheet">&#182;</a></h2>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table>
+<thead><tr>
+<th>Task</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create problem</td>
+<td><code>pbm = ConicProgram(solver = ECOS, solver_options = opts)</code></td>
+</tr>
+<tr>
+<td>Create scalar variable</td>
+<td><code>x = @new_variable(pbm, "x")</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>x = @new_variable(pbm, 1, "x"</code></td>
+</tr>
+<tr>
+<td>Create vector variable</td>
+<td><code>x = @new_variable(pbm, 3, "x")</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>x = @new_variable(pbm, (2, 5), "x")</code></td>
+</tr>
+<tr>
+<td>Index vector variable</td>
+<td><code>x[:, 1]</code></td>
+</tr>
+<tr>
+<td>Scale variable</td>
+<td><code>@scale(x,5,1)</code></td>
+</tr>
+<tr>
+<td>Variable value</td>
+<td><code>value(x)</code></td>
+</tr>
+<tr>
+<td>Query problem</td>
+<td><code>pbm</code></td>
+</tr>
+<tr>
+<td>Query problem variables</td>
+<td><code>variables(pbm)</code></td>
+</tr>
+<tr>
+<td>Box constraint</td>
+<td><code>@add_constraint(pbm, NONPOS, "my-box", x -&gt; A*x .+ b)</code></td>
+</tr>
+<tr>
+<td>Ball constraint</td>
+<td><code>@add_constraint(pbm, SOC, "my-ball", x -&gt; A*x .+ b)</code></td>
+</tr>
+<tr>
+<td>Hyperplane constraint</td>
+<td><code>@add_constraint(pbm, ZERO, "my-hypln", x -&gt; A*x .+ b)</code></td>
+</tr>
+<tr>
+<td>Halfspace constraint</td>
+<td><code>@add_constraint(pbm, NONPOS, "my-hlfspc", x -&gt; A*x .+ b)</code></td>
+</tr>
+<tr>
+<td>Add to cost funtion</td>
+<td><code>@add_cost(pbm, t -&gt; cst["a"]*t)</code></td>
+</tr>
+<tr>
+<td>Solve problem</td>
+<td><code>exit_status = solve!(pbm)</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="SCP-for-Trajectory-Optimization">SCP for Trajectory Optimization<a class="anchor-link" href="#SCP-for-Trajectory-Optimization">&#182;</a></h2>
 </div>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
