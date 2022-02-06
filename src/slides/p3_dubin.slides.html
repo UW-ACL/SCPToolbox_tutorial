@@ -14387,24 +14387,22 @@ div.jp-OutputPrompt {
 <h1 id="SCP-Toolbox-Workshop">SCP Toolbox Workshop<a class="anchor-link" href="#SCP-Toolbox-Workshop">&#182;</a></h1><p><strong><em>A tutorial on generating dynamically feasible trajectories reliably and efficiently</em></strong></p>
 <p>Monday, February 7, 2022</p>
 <p>Rocky Mountain AAS GN&amp;C Conference, Breckenridge, CO</p>
-
+<h2 style="color: black;">
+    <span style="background-color: #ECBE7B; padding: 1px;">&ensp;Part 3: Dubin's Car Trajectory Optimization&ensp;</span>
+</h2>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Part-3:-Dubin's-Car-Trajectory-Optimization">Part 3: Dubin's Car Trajectory Optimization<a class="anchor-link" href="#Part-3:-Dubin's-Car-Trajectory-Optimization">&#182;</a></h1>
-</div>
-</div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Solve the following trajectory generation problem:</p>
 <center>
     <img src="media/p3-dubin-car-overview.png" width="350px"/>
     <br />
-    <b>Figure.</b> Computed Dubin's car trajectory for minimum-input usage.
+    <b>Figure.</b> Setup for Dubin's car trajectory optimization.
     <br />
     <br />
 </center>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="SCP-Algorithm-Overview">SCP Algorithm Overview<a class="anchor-link" href="#SCP-Algorithm-Overview">&#182;</a></h2>
 </div>
@@ -14414,7 +14412,7 @@ div.jp-OutputPrompt {
     <br />
     <img src="media/p3-scp-diag3.png" width="750"/>
     <br />
-    <b>Figure.</b> A high-level overview of the SCP algorithm for trajectory optimization problems.
+    <b>Figure.</b> A high-level overview of SCP algorithms for trajectory optimization problems.
     <br />
 </center>
 </div>
@@ -14780,11 +14778,11 @@ G(t, x, u, p) &amp;= \nabla_p s(t, x, u, p).
 <p>The toolbox API function for defining the nonconvex constraints is <code>problem_set_s!</code>.</p>
 <p>Because of problem statement differences among SCP algorithms, this function must be provided with a symbol corresponding to the SCP algorithm type.</p>
 <ul>
-<li><p><code>:ptr</code> -&gt; Penalized Trust Region (PTR)</p>
+<li><p><code>:ptr</code> $\rightarrow$ Penalized Trust Region (PTR)</p>
 </li>
-<li><p><code>:scvx</code> -&gt; Successive Convexification (SCvx)</p>
+<li><p><code>:scvx</code> $\rightarrow$ Successive Convexification (SCvx)</p>
 </li>
-<li><p><code>:gusto</code> -&gt; Guaranteed Sequential Trajectory Optimization (GuSTO)</p>
+<li><p><code>:gusto</code> $\rightarrow$ Guaranteed Sequential Trajectory Optimization (GuSTO)</p>
 </li>
 </ul>
 <p>In this notebook, PTR and SCvx are demonstrated.</p>
