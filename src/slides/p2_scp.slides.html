@@ -14767,6 +14767,22 @@ JuMP and Ipopt: [0.7262087348131022, 0.5273791265186897]</pre>
 
 </div>
 
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="SCP-for-Trajectory-Optimization">SCP for Trajectory Optimization<a class="anchor-link" href="#SCP-for-Trajectory-Optimization">&#182;</a></h1>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+\begin{array}{ll}
+\underset{u,\ p}{\text{minimize}} &amp; J(x, u, p) \\
+\text{subject to} &amp; \dot{x}(t)=f(t, x(t), u(t), p), \\
+&amp; (x(t), p) \in \mathcal{X}(t), \\
+&amp; (u(t), p) \in \mathcal{U}(t), \\
+&amp; s(t, x(t), u(t), p) \leq 0, \\
+&amp; g_{\text {ic}}(x(0), p)=0, \\
+&amp; g_{\text {tc}}(x(1), p)=0
+\end{array}
+</div>
 </div></div></section></section>
 </div>
 </div>
