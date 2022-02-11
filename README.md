@@ -60,4 +60,4 @@ jupyter nbconvert --output-dir='slides' p1_clp.ipynb --to slides --no-prompt --T
 ```
 ## To land on the Moon:
 
- - [Notebook](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/535fa41cf2fb65506225d77fb9f6e74de9257045/src/p4_rocket_solutions.ipynb)
+ - [Rendered notebook](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/535fa41cf2fb65506225d77fb9f6e74de9257045/src/p4_rocket_solutions.ipynb)
