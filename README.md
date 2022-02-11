@@ -1,4 +1,4 @@
-# Tutorials for `SCPToolbox.jl`
+# Tutorials for `SCPToolbox.jl` by [ACL](https://depts.washington.edu/uwacl/)
 
 ## To run the tutorial notebooks out-of-the-box:
 
