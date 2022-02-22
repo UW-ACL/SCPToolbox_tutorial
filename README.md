@@ -58,6 +58,14 @@
 ```
 jupyter nbconvert --output-dir='slides' p1_clp.ipynb --to slides --no-prompt --TagRemovePreprocessor.remove_input_tags={\"hide-input\"} --TagRemovePreprocessor.remove_all_outputs_tags={\"hide-output\"} --post serve
 ```
-## To land on the Moon:
 
- - [Rendered notebook](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/535fa41cf2fb65506225d77fb9f6e74de9257045/src/p4_rocket_solutions.ipynb)
+## Rendered notebooks and slides
+
+| Part          | Notebooks              | Slides                       | Description                                        |
+| ------------- | ---------------------- | ---------------------------- | -------------------------------------------------- |
+| 0             | [`p0_welcome.ipynb`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/p0_welcome.ipynb) | [`p0_welcome.slides.html`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/slides/p0_welcome.slides.html#/) | Introduction                                       |
+| 1             | [`p1_clp.ipynb`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/p1_clp.ipynb)     | [`p1_clp.slides.html`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/slides/p1_clp.slides.html#/)     | Conic linear programs (CLPs)                       |
+| 2             | [`p2_scp.ipynb`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/p2_scp.ipynb)     | [`p2_scp.slides.html`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/slides/p2_scp.slides.html#/)     | Simple sequential convex programming (SCP) example |
+| 3             | [`p3_dubin.ipynb`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/p3_dubin.ipynb)   | [`p3_dubin.slides.html`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/slides/p3_dubin.slides.html#/)   | Dubin's car trajectory optimization                |
+| 4             | [`p4_rocket.ipynb`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/master/src/p4_rocket.ipynb)  |                            | Rocket-landing guidance (self-guided tutorial) |
+| 4*            | [`p4_rocket_solutions.ipynb`](https://nbviewer.org/github/UW-ACL/SCPToolbox_tutorial/blob/535fa41cf2fb65506225d77fb9f6e74de9257045/src/p4_rocket_solutions.ipynb)  |                                          | Rocket-landing guidance (solutions) |
