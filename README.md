@@ -1,5 +1,9 @@
 # Tutorials for [`SCPToolbox.jl`](https://github.com/UW-ACL/SCPToolbox.jl) by [ACL](https://depts.washington.edu/uwacl/)
 
+<p align="center">
+  <img src="src/media/rocket_landing.gif" width="650px">
+</p>
+
 ## To run the tutorial notebooks out-of-the-box:
 
   - (Binder) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-ACL/SCPToolbox_tutorial/master?labpath=tutorial%2Fsrc%2Fp1_clp.ipynb)
